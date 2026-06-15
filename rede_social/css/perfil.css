@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: #fff;
+    background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.35), transparent 35%),
+        linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#a78bfa 1px, transparent 1px);
+    background-size: 80px 80px, 140px 140px;
+    background-position: 0 0, 40px 60px;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.perfil-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar {
+    width: 270px;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(18px);
+    padding: 30px 20px;
+    border-right: 1px solid rgba(167, 139, 250, 0.25);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.35);
+}
+
+.logo-box {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.logo {
+    width: 78px;
+    filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.9));
+}
+
+.logo-box h1 {
+    font-size: 34px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #a78bfa, #60a5fa, #f0abfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-box p {
+    color: #c4b5fd;
+    font-size: 14px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.menu-item {
+    color: #e0e7ff;
+    text-decoration: none;
+    padding: 15px 17px;
+    border-radius: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.95), rgba(37, 99, 235, 0.95));
+    color: #fff;
+    transform: translateX(6px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.45);
+}
+
+.perfil-main {
+    flex: 1;
+    padding: 42px;
+}
+
+.perfil-header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top right, rgba(236, 72, 153, 0.35), transparent 35%),
+        linear-gradient(135deg, rgba(124, 58, 237, 0.78), rgba(37, 99, 235, 0.78));
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.38);
+}
+
+.perfil-header::after {
+    content: "✦";
+    position: absolute;
+    right: 45px;
+    top: 25px;
+    font-size: 70px;
+    color: rgba(255,255,255,0.18);
+}
+
+.perfil-foto {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    border: 5px solid rgba(255,255,255,0.85);
+    box-shadow:
+        0 0 0 8px rgba(167, 139, 250, 0.20),
+        0 0 35px rgba(96, 165, 250, 0.75);
+}
+
+.perfil-header h2 {
+    font-size: 38px;
+    margin-bottom: 6px;
+}
+
+.perfil-header p {
+    font-size: 19px;
+    color: #ddd6fe;
+}
+
+.cards-resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.card-numero {
+    background: rgba(15, 23, 42, 0.68);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(167, 139, 250, 0.22);
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    transition: 0.3s;
+}
+
+.card-numero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.35);
+}
+
+.card-numero strong {
+    display: block;
+    font-size: 36px;
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-numero span {
+    color: #cbd5e1;
+}
+
+.perfil-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+}
+
+.perfil-card {
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(167, 139, 250, 0.20);
+    border-radius: 26px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.30);
+}
+
+.perfil-card h3 {
+    margin-bottom: 22px;
+    font-size: 23px;
+    color: #c4b5fd;
+}
+
+.info-linha {
+    margin-bottom: 14px;
+    color: #e5e7eb;
+}
+
+.info-linha strong {
+    color: #93c5fd;
+}
+
+.form-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-perfil input,
+.form-perfil select {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 15px;
+    border: 1px solid rgba(167, 139, 250, 0.24);
+    background: rgba(2, 6, 23, 0.74);
+    color: #fff;
+    outline: none;
+}
+
+.form-perfil input::placeholder {
+    color: #94a3b8;
+}
+
+.form-perfil input:focus,
+.form-perfil select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 18px rgba(167, 139, 250, 0.35);
+}
+
+.form-perfil button {
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #7c3aed, #2563eb, #ec4899);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.28);
+}
+
+.form-perfil button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.45);
+}
+
+.alerta {
+    padding: 15px 18px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+.erro {
+    background: rgba(239, 68, 68, 0.18);
+    color: #fecaca;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.sucesso {
+    background: rgba(34, 197, 94, 0.18);
+    color: #bbf7d0;
+    border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+@media (max-width: 900px) {
+    .perfil-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .perfil-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cards-resumo,
+    .perfil-grid {
+        grid-template-columns: 1fr;
+    }
+}

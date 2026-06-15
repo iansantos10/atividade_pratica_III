@@ -1,0 +1,214 @@
+:root{
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --border: #e6e8ee;
+  --text: #1f2937;
+  --muted: #6b7280;
+
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.layout{
+  display: flex;
+  min-height: 100vh;
+}
+
+.navbar{
+  width: 65px;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: 15px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.nav-btn{
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.nav-btn.active{
+  background: #e9e9e9;
+}
+
+.container{
+  width: min(760px, 92vw);
+  margin: 22px auto;
+  display: grid;
+  gap: 16px;
+  padding: 0 12px;
+}
+
+.perfil{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.foto-perfil{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info-usuario{
+  flex: 1;
+}
+
+.nome{
+  display: block;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.usuario{
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-editar{
+  border: none;
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.nova-postagem{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.nova-postagem form{
+  display: grid;
+  gap: 10px;
+}
+
+.nova-postagem input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.nova-postagem button{
+  justify-self: start;
+  border: none;
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.postagens{
+  display: grid;
+  gap: 14px;
+}
+
+.post{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.post-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.foto-perfil-post{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.conteudo{
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.interacoes{
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.interacoes button{
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 520px){
+  .layout{
+    flex-direction: column;
+  }
+  .navbar{
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

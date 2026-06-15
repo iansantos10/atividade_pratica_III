@@ -1,0 +1,5 @@
+<?php
+
+// Model de seguidores
+
+?>
